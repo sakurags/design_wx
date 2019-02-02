@@ -1,0 +1,89 @@
+<form bindsubmit="formSubmit" bindreset="formReset" >
+  <view class="btn-area">
+    <button form-type="submit">提交</button>
+    <button form-type="reset">重置</button>
+  </view>
+<view wx:for="{{array}}" wx:for-index="id" >
+<view wx:if="{{item.state=='1'}}" >
+<view class="section section_gap">
+    <view class="section__title">{{item.name}}</view>
+    <radio-group  name="mque" id="{{id}}" bindchange="radiochange" >
+      <label>
+        <radio value="{{item.answer1}}" />
+      <text>{{item.answer1}} \n</text>
+      </label>
+      <label>
+       <radio  value="{{item.answer2}}" />
+    <text>{{item.answer2}} \n</text>
+      </label>
+      <label>
+       <radio value="{{item.answer3}}" />
+      <text>{{item.answer3}} \n</text>
+      </label>
+      <label>
+       <radio value="{{item.answer4}}" />
+    <text>{{item.answer4}} \n</text>
+      </label>
+    </radio-group>
+    </view>
+
+</view>
+<view wx:elif="{{item.state=='2'}}">
+<view class="section section_gap">
+    <view class="section__title">{{item.name}}</view>
+    <checkbox-group name="mques"  id="{{id}}" bindchange="boxchange" >
+      <label>
+        <checkbox value="{{item.answer1}}" />
+      <text>{{item.answer1}} \n</text>
+      </label>
+      <label>
+       <checkbox value="{{item.answer2}}" />
+    <text>{{item.answer2}} \n</text>
+      </label>
+      <label>
+        <checkbox value="{{item.answer3}}" />
+      <text>{{item.answer3}} \n</text>
+      </label>
+      <label>
+        <checkbox value="{{item.answer4}}" />
+    <text>{{item.answer4}} \n</text>
+      </label>
+    </checkbox-group>
+    </view>
+</view>
+
+
+<view wx:elif="{{item.state=='3'}}">
+<view class="section__title">{{item.name}}</view>
+   <radio-group name="tfque"  id="{{id}}" bindchange="tfchange">
+      <label>
+        <radio value="正确" />
+      <text>正确       </text>
+      </label>
+      <label>
+        <radio value="错误" />
+      <text>错误 \n</text>
+      </label>
+    </radio-group>
+</view>
+<view wx:elif="{{item.state=='4'}}">
+<view class="section__title">{{item.name}}</view>
+<input id='{{id}}' bindblur="fchange" type="text" />
+</view>
+
+<view wx:elif="{{item.state=='5'}}">
+<view class="section section_gap">
+<view class="section__title">{{item.name}}</view>
+  <textarea id='{{id}}' bindblur="sachange" placeholder="请输入答案" auto-focus />
+</view>
+</view>
+
+<view wx:elif="{{item.state=='6'}}">
+<view class="section__title">{{item.name}}</view>
+<view class="main">
+  <button bindtap='didPressChooesImage' id='{{item.id}}'>上传图片</button>
+</view>
+</view>
+  </view>
+
+</form>

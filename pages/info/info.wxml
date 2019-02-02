@@ -1,0 +1,8 @@
+<!--info.wxml-->
+<view class="container">
+<view class='head'>所有考试信息，点击进入</view>
+<view wx:for="{{array}}" wx:key="id">
+  <view bindtap='gopaper' data-id="{{item.id}}">卷名:{{item.name}} 老师:{{item.tname}} 课程:{{item.cname}}</view>
+</view>
+
+</view>

@@ -1,0 +1,11 @@
+/* pages/info/info.wxss */
+/* page{
+  background-color: lightcyan;
+} */
+
+.head{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  color: red
+}
